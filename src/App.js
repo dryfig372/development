@@ -3,7 +3,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import films from './data.js';
 import Film from './Film.jsx';
-import Header from './Header';
 
 function App() {
   const [genre, setGenre] = useState("All");
