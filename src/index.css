@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +11,108 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+}
+
+img.small {
+  width: 100%;
+  border-radius: 15px;
+}
+
+button {
+  padding: 0.3rem;
+  border-radius: 15px;
+  background-color: #BEE8F7;
+  width: 100%;
+  cursor: pointer;
+}
+
+button.remove {
+  padding: 0.3rem;
+  border-radius: 15px;
+  background-color: #8A4A65;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+  width: 350px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.sort {
+  background-color: #8A4A65;
+  color: white;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 8px;
+  width: 100px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-items: left;
+  margin: 2px;
+}
+
+.row.center {
+  align-items: center;
+}
+
+.col-1 {
+  flex: 0.6;
+}
+
+.col-2 {
+  flex: 2.4;
+}
+
+.col-3 {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 5px;
+}
+
+.block {
+  background-color: #D4C0DA;
+  padding: 1rem;
+}
+
+.box {
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  margin: 5px;
+  width: 50%;
+}
+
+div.dropdown-menu.show {
+  color: black;
+  
+}
+a.dropdown-item {
+  color: black; 
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
 }
