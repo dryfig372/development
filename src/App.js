@@ -48,7 +48,7 @@ function App() {
       return films;
     } else if (sort === "Titles A-Z") {
       return films.sort((a, b) => (a.name > b.name ? 1 : -1));
-    } else if (sort === "Titles A-Z") {
+    } else if (sort === "Titles Z-A") {
       return films.sort((a, b) => (a.name < b.name ? 1 : -1))
     };
   };
@@ -60,26 +60,27 @@ function App() {
     if (checkFavorites(item)) {
       let removedFavorites = favorites.filter((x) => x !== item.name);
       setFavorites(removedFavorites);
+      setTime(totalTime - item.time);
     } else {
       setFavorites([...favorites, item.name]);
-    }
-    setTime(totalTime + item.time);
+      setTime(totalTime + item.time);
+    };
   };
 
   const checkFavorites = (item) => {
     for (var i = 0; i < favorites.length; i++) {
       if (favorites[i] === item.name) {
         return true;
-      }
-    }
+      };
+    };
     return false;
-  } 
+  }; 
 
   const reset = () => {
     setGenre("All");
     setRating("All");
     setSort("All");
-  }
+  };
 
   return (
     <div>
@@ -91,25 +92,26 @@ function App() {
           <h5>Sort by:</h5>
           <DropdownButton title={sort} onSelect={selectSort} id="dropdown">
             <Dropdown.Item eventKey="All">All</Dropdown.Item>
-            <Dropdown.Item eventKey="Titles A-Z">Titles A-Z</Dropdown.Item>
-            <Dropdown.Item eventKey="Titles Z-A">Titles Z-A</Dropdown.Item>
+            <Dropdown.Item eventKey="Titles A-Z"> | Titles A-Z</Dropdown.Item>
+            <Dropdown.Item eventKey="Titles Z-A"> | Titles Z-A</Dropdown.Item>
           </DropdownButton>
           <br></br>
           <h5>Genre:</h5>
           <DropdownButton title={genre} onSelect={selectGenre} id="dropdown">
             <Dropdown.Item eventKey="All">All</Dropdown.Item>
-            <Dropdown.Item eventKey="Action">Action</Dropdown.Item>
-            <Dropdown.Item eventKey="Drama">Drama</Dropdown.Item>
-            <Dropdown.Item eventKey="Mystery">Mystery</Dropdown.Item>
-            <Dropdown.Item eventKey="Sci-Fi">Sci-Fi</Dropdown.Item>
+            <Dropdown.Item eventKey="Action"> | Action</Dropdown.Item>
+            <Dropdown.Item eventKey="Drama"> | Drama</Dropdown.Item>
+            <Dropdown.Item eventKey="Mystery"> | Mystery</Dropdown.Item>
+            <Dropdown.Item eventKey="Sci-Fi"> | Sci-Fi</Dropdown.Item>
           </DropdownButton>
           <br></br>
           <h5>Rating:</h5>
           <DropdownButton title={rating} onSelect={selectRating} id="dropdown">
             <Dropdown.Item eventKey="All">All</Dropdown.Item>
-            <Dropdown.Item eventKey="PG-13">PG-13</Dropdown.Item>
-            <Dropdown.Item eventKey="R">R</Dropdown.Item>
+            <Dropdown.Item eventKey="PG-13"> | PG-13</Dropdown.Item>
+            <Dropdown.Item eventKey="R"> | R</Dropdown.Item>
           </DropdownButton>
+          <br></br>
           <br></br>
           <button onClick={reset}>Reset</button>
         </div>
