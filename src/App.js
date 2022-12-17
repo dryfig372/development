@@ -86,7 +86,7 @@ function App() {
     <div>
       <div className='row center block'>
             <div><h1>FilmFinder</h1></div>
-        </div>
+      </div>
       <div>
         <div className='block col-2'>
           <h5>Sort by:</h5>
@@ -113,11 +113,12 @@ function App() {
           </DropdownButton>
           <br></br>
           <br></br>
-          <button onClick={reset}>Reset</button>
+          <button onClick={reset} className='remove'>Reset</button>
         </div>
         <div className='row'>
         <div className='block col-2'>
           <div className='row'>
+          <br></br>
           {filteredFilms.map((film) => (
             <Film 
               name={film.name}
